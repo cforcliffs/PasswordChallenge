@@ -24,16 +24,23 @@ function getRandomCharacter(){
 
 
 function generateRandomPassword(){
-
-let randomPassword = ""
+    let randomPassword = ""
     for(let i = 0; i < passwordLength; i++){
         randomPassword += getRandomCharacter()
     }
-            return randomPassword
-
+    return randomPassword
 }
 
-passwordOne.innerText = generateRandomPassword()
+// Function to generate and display both passwords
+function generatePasswords(){
+    // Generate two different passwords
+    let password1 = generateRandomPassword()
+    let password2 = generateRandomPassword()
+    
+    // Display the passwords in the HTML elements
+    passwordOne.innerText = password1
+    passwordTwo.innerText = password2
+}
 
 
 
