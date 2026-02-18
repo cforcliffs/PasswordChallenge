@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #111827;
+  padding: 40px;
+  width: 560px;
+  max-width: 95%;
+  border-radius: 15px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+  animation: fadeIn 0.8s ease;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+h1 span {
+  color: #4ade80;
+}
+
+p {
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+.setting {
+  margin-bottom: 15px;
+  color: white;
+  font-size: 14px;
+}
+
+.setting label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+button {
+  background: #22c55e;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #16a34a;
+  transform: scale(1.03);
+}
+
+.password-output {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.password-output input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #1f2937;
+  color: #4ade80;
+  font-weight: bold;
+}
+
+.password-box {
+  flex: 1;
+  background-color: #1f2937;
+  padding: 12px;
+  border-radius: 6px;
+  color: #4ade80;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.strength {
+  margin-top: 15px;
+  color: white;
+}
+
+.strength-bar {
+  height: 6px;
+  background: #374151;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+#strengthFill {
+  height: 6px;
+  width: 50%;
+  background: orange;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+h4{
+
+  font-weight: lighter;
+  margin-top: 30px;
+  color: #00ff5e;
+}
+
+
+
+
+
+/* BUTTON GLOW */
+button {
+
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  color: #FFF;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  background: #22c55e;
+  border: none;
+  font-weight: bold;
+  font-size: 1.25rem;
+  transition: 0.3s ease;
+}
+button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #24a455;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+/* glow */
+button::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+
+/* hover */
+button:hover::before {
+  opacity: 1;
+}
+
+button:active:after {
+  background: transparent;
+}
+
+button:active {
+  color: #000;
+  font-weight: bold;
+}

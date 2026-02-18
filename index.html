@@ -2,41 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-
-    <title>Password Generator</title>
+    <title>Jeremiah Bekoe's Password Generator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-        <body>
-
-            <!-- TITLE FOR THE PG -->
-                <section class="app-container">
-
-                    <h1>Generate a<br>
-                        <span id="green">random password!</span>
-                    </h1>
-                    <h2>Never use an insecure password again.</h2>
-                    <button id="genbtn-el">Generate passwords</button> 
+<body>
 
 
-            
+<div class="container">
 
 
-        <section class="gen-characters">
-                    <p id ="password1-el">**************</p>
-                    <p id ="password2-el">**************</p>                           
-        </section>
+    <h1>
+        Generate a <br>
+        <span>random password!</span>
+    </h1>
 
+    <p>Never use an insecure password again.</p>
 
-                        
-                        <script src="index.js"></script>
+    <!-- Length Selector -->
+    <div class="setting">
+        <label>Password Length: <span id="lengthValue">16</span></label>
+        <input type="range" id="lengthSlider" min="6" max="32" value="16">
+    </div>
 
+    <!-- Options -->
+    <div class="setting">
+        <label><input type="checkbox" id="uppercase" checked> Uppercase</label>
+        <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
+        <label><input type="checkbox" id="numbers" checked> Numbers</label>
+        <label><input type="checkbox" id="symbols" checked> Symbols</label>
+    </div>
 
-                        </section>
+    <!-- Gen button -->
+    <button id="generateBtn">Generate Password</button>
 
-        </body>
+    <!-- Strength Indicator -->
+    <div class="strength">
+        Strength: <span id="strengthText">Medium</span>
+        <div class="strength-bar">
+            <div id="strengthFill"></div>
+        </div>
+    </div>
+
+    <!-- Password Output -->
+    <div class="password-output">
+        <input class="password-box" type="text" id="passwordField" readonly><br>
+        <button id="copyBtn">Copy</button>
+    </div>
+    
+    <h4>Created by Jeremiah Bekoe.</h4>
+
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>
